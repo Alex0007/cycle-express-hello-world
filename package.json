@@ -13,6 +13,7 @@
     "@cycle/rxjs-run": "^3.0.3",
     "babel-core": "^6.10.4",
     "babel-preset-es2015": "*",
+    "cycle-express": "Alex0007/cycle-express",
     "express": "*",
     "rxjs": "^5.0.0-rc.1"
   }
