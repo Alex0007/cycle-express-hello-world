@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r babel-core/register index.js"
+    "start": "node-dev -r babel-core/register index.js"
   },
   "author": "Alex0007",
   "license": "ISC",
@@ -16,5 +16,8 @@
     "cycle-express": "Alex0007/cycle-express",
     "express": "*",
     "rxjs": "^5.0.0-rc.1"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
   }
 }
