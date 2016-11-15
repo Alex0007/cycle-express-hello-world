@@ -1,4 +1,4 @@
-import xs from 'xstream'
+import Rx from 'rxjs/Rx'
 
 const NestedComponent = ({ router }) => {
   const nestedRouter$ = router.route('/nested')
@@ -9,7 +9,7 @@ const NestedComponent = ({ router }) => {
 
 
   return {
-    router: xs.merge(nestedHandler$)
+    router: Rx.Observable.merge(nestedHandler$)
   }
 }
 

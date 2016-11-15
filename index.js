@@ -1,5 +1,5 @@
-import xs from 'xstream'
-import { run } from '@cycle/xstream-run'
+import Rx from 'rxjs/Rx'
+import { run } from '@cycle/rxjs-run'
 import makeRouterDriver from 'cycle-express'
 import express from 'express'
 
@@ -24,7 +24,7 @@ function main({ router }) {
     })
 
   return {
-    router: xs.merge(mainHandler$, numberHandler$, nested.router)
+    router: Rx.Observable.merge(mainHandler$, numberHandler$, nested.router)
   }
 }
 
