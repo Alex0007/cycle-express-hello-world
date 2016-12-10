@@ -15,6 +15,12 @@ function main({ router }) {
     return { id, send: 'This is an example of cycle.js driver for express application' }
   })
 
+  const delayed$ = router.get('/delayed').flatMap(({id}) => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve({id, send: 'this was delayed'}), 3000)
+    })
+  })
+
   const numberHandler$ = router.get('/number/:number')
     .map(req => {
       return {
@@ -24,7 +30,7 @@ function main({ router }) {
     })
 
   return {
-    router: Rx.Observable.merge(mainHandler$, numberHandler$, nested.router)
+    router: Rx.Observable.merge(mainHandler$, numberHandler$, delayed$, nested.router)
   }
 }
 
