@@ -1,6 +1,6 @@
 import Rx from 'rxjs/Rx'
 import { run } from '@cycle/rxjs-run'
-import makeRouterDriver from 'cycle-express'
+import { makeRouterDriver } from 'cycle-express'
 import express from 'express'
 
 import NestedComponent from './nested'
