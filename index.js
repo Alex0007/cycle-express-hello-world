@@ -30,11 +30,7 @@ function main({ router }) {
     })
 
   return {
-    router: Rx.Observable
-      .merge(mainHandler$, numberHandler$, delayed$, nested.router)
-      .catch((err) => {
-        return Rx.Observable.of({id: err.id, send: err.error.message})
-      })
+    router: Rx.Observable.merge(mainHandler$, numberHandler$, delayed$, nested.router)
   }
 }
 
