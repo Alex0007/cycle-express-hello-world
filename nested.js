@@ -7,9 +7,14 @@ const NestedComponent = ({ router }) => {
     .get('/123')
     .map(({ id }) => { return { id, send: 'nested router' } })
 
+  const nestedError$ = nestedRouter$
+    .get('/error')
+    .flatMap(req => {
+      throw({id: req.id, error: new Error('This is an error')})
+    })
 
   return {
-    router: Rx.Observable.merge(nestedHandler$)
+    router: Rx.Observable.merge(nestedHandler$, nestedError$)
   }
 }
 
