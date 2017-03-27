@@ -1,21 +1,19 @@
 {
   "name": "cycle-express-hello-world",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Hello world app using cycle-express driver",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node-dev -r babel-core/register index.js"
+    "start": "node-dev index.js"
   },
   "author": "Alex0007",
   "license": "ISC",
   "dependencies": {
-    "@cycle/rxjs-run": "^3.0.3",
-    "babel-core": "^6.10.4",
-    "babel-preset-es2015": "*",
-    "cycle-express": "Alex0007/cycle-express",
+    "@cycle/rxjs-run": "^7.0.0",
+    "cycle-express-driver": "^7.0.0",
     "express": "*",
-    "rxjs": "^5.0.0-rc.3"
+    "rxjs": "^5.2.0"
   },
   "devDependencies": {
     "node-dev": "^3.1.3"
